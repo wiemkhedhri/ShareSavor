@@ -1,0 +1,68 @@
+.pagination-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.pagination-controls button {
+  background-color: white;
+  border: 1px solid #ddd;
+  color: #555;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 0 10px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.pagination-controls button:hover {
+  background-color: #e0e0e0;
+}
+
+.pagination-controls button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.pagination-controls span {
+  font-size: 16px;
+  color: #555;
+}
+
+.pagination-controls button.active {
+  background-color: #8BC34A; /* Active page green */
+  color: white;
+  border-color: #8BC34A;
+}
+.currency-selector {
+  display: flex;
+  align-items: center;
+  margin: 20px 0; /* Adjust spacing as needed */
+}
+
+.currency-selector label {
+  margin-right: 10px; /* Space between label and select */
+  font-weight: bold; /* Make the label bold */
+}
+
+.currency-selector select {
+  padding: 8px 12px; /* Add padding for a better touch target */
+  border: 1px solid #ccc; /* Light gray border */
+  border-radius: 4px; /* Rounded corners */
+  background-color: #fff; /* White background */
+  font-size: 16px; /* Font size */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: border-color 0.3s ease; /* Smooth transition for border color */
+}
+
+.currency-selector select:focus {
+  border-color: #007bff; /* Change border color on focus */
+  outline: none; /* Remove default outline */
+}
+
+.currency-selector select:hover {
+  border-color: #0056b3; /* Darker border color on hover */
+}

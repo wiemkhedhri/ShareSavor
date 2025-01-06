@@ -1,0 +1,85 @@
+<body class="goto-here">
+  <div class="hero-wrap hero-bread" style="background-image: url('/assets/donation4.jpg');">
+    <div class="container">
+      <div class="row no-gutters slider-text align-items-center justify-content-center">
+        <div class="col-md-9 ftco-animate text-center">
+          <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home</a></span> <span>Cart</span></p>
+          <h1 class="mb-0 bread">My Cart</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="ftco-section ftco-cart">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 ">
+          <div class="cart-list">
+            <table class="table">
+              <thead class="thead-primary">
+                <tr class="text-center">
+                  <th>&nbsp;</th>
+                  <th>&nbsp;</th>
+                  <th>Product name</th>
+                  <th>Price</th>
+                  <th>Quantity</th>
+                  <th>Total</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="text-center" *ngFor="let item of Items">
+                  <td class="product-remove">
+                    <a (click)="deleteitem(item.id)">
+                      <span class="ion-ios-close"></span>
+                    </a>
+                  </td>
+
+                  <td class="image-prod">
+                    <div class="img" [style.backgroundImage]="getSanitizedUrl(item.publication.image)"></div>
+                  </td>
+
+                  <td class="product-name">
+                    <h3>{{ item.publication.aliment }}</h3>
+                  </td>
+
+                  <td class="price">{{ item.publication.prix_unitaire | number:'1.2-2' }} TND</td>
+
+                  <td class="quantity">
+                    <div class="input-group mb-3">
+                      <button type="button" class="btn btn-outline-secondary" (click)="decreaseQuantity(item)" [disabled]="item.quantity === 1">
+                        -
+                      </button>
+                      <input type="text" name="quantity" class="quantity form-control input-number" [(ngModel)]="item.quantity" readonly>
+                      <button type="button" class="btn btn-outline-secondary" (click)="increaseQuantity(item)" [disabled]="item.quantity >= item.publication.quantitedisponible">
+                        +
+                      </button>
+                    </div>
+                  </td>
+
+                  <td class="total">{{ item.total | currency:'TND' }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+<br><br><br><br><br>
+      <div class="row justify-content-end" style="margin-right: 1044px; margin-top: -120px;">
+        <div class="col-lg-4 mt-5 cart-wrap ftco-animate fadeInUp ftco-animated">
+          <div class="cart-total mb-3" style="width: 1000px;">
+            <h3>Cart Totals</h3>
+            <hr>
+            <p class="d-flex total-price">
+              <span>Total</span>
+              <span>{{ totalPrice | currency:'TND' }}</span>
+            </p>
+            <p>
+
+              <button (click)="proceedToCheckout()" style="margin-left: 735px; margin-top: -49px;font-size: medium;font-size: medium;" class="btn btn-primary py-3 px-4">Proceed to Checkout</button>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>

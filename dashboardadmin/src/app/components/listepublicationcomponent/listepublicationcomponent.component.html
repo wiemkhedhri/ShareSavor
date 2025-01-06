@@ -1,0 +1,58 @@
+<div class="main-wrapper">
+
+
+
+  <!-- Page Wrapper -->
+        <div class="page-wrapper" style="min-height: 444px;">
+            <div class="content container-fluid">
+
+      <!-- Page Header -->
+      <div class="page-header">
+        <div class="row">
+          <div class="col">
+            <h3 class="page-title">Publication List</h3>
+            <ul class="breadcrumb">
+              <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+              <li class="breadcrumb-item active">Publication List</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- /Page Header -->
+      <div class="comp-sec-wrapper">
+
+        <!-- Cards -->
+        <section class="comp-section comp-cards">
+          <div class="section-header">
+                            <h3 class="section-title">Cards</h3>
+                            <div class="line"></div>
+                        </div>
+
+          <div class="row">
+            <div class="col-12 col-md-6 col-lg-4 d-flex" *ngFor="let pub of publciationlist">
+              <div class="card flex-fill">
+                <img alt="Card Image" src="http://localhost:8081/fileController/files/{{pub.image}}" class="card-img-top">
+                <div class="card-header">
+                  <h5 class="card-title mb-0">{{pub.aliment}}</h5>
+                </div>
+                <div class="card-body">
+                  <p class="card-text">publication date:{{pub.datepublication| date}}</p>
+                  <p class="card-text">Quantity:{{pub.quantitedisponible}}</p>
+                  <p class="card-text">Price:{{pub.prix_unitaire}}</p>
+
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+
+
+
+        </section>
+        <!-- /Cards -->
+      </div>
+
+    </div>
+  </div>
+    </div>

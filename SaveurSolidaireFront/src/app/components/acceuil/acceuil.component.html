@@ -1,0 +1,230 @@
+<body class="goto-here" data-aos-easing="slide" data-aos-duration="800" data-aos-delay="0">
+  <section id="home-section" class="hero">
+    <div class="home-slider owl-carousel owl-loaded owl-drag">
+
+
+
+    <div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(-3038px, 0px, 0px); transition: all 0s ease 0s; width: 9116px;"><div class="owl-item cloned" style="width: 1519.2px;"><div class="slider-item" style="background-image: url(/assets/donation4.jpg);">
+        <div class="overlay"></div>
+        <div class="container">
+          <div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">
+          </div>
+        </div>
+      </div></div><div class="owl-item cloned animated owl-animated-out fadeOut" style="width: 1519.2px; left: 1519px;"><div class="slider-item" style="background-image: url(/assets/donaionsignin.jpg);">
+        <div class="overlay"></div>
+        <div class="container">
+          <div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">
+          </div>
+        </div>
+      </div></div><div class="owl-item animated owl-animated-in fadeIn active" style="width: 1519.2px;"><div class="slider-item" style="background-image: url(/assets/donation4.jpg);">
+        <div class="overlay"></div>
+        <div class="container">
+          <div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">
+
+          </div>
+        </div>
+      </div></div><div class="owl-item" style="width: 1519.2px;"><div class="slider-item" style="background-image: url(/assets/donation4.jpg);">
+        <div class="overlay"></div>
+        <div class="container">
+          <div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">
+
+          </div>
+        </div>
+      </div></div><div class="owl-item cloned" style="width: 1519.2px;"><div class="slider-item" style="background-image: url(/assets/donaionsignin.jpg);">
+        <div class="overlay"></div>
+        <div class="container">
+          <div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">
+
+
+
+          </div>
+        </div>
+      </div></div><div class="owl-item cloned" style="width: 1519.2px;"><div class="slider-item" style="background-image: url(/assets/donaionsignin.jpg);">
+        <div class="overlay"></div>
+        <div class="container">
+          <div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">
+
+
+          </div>
+        </div>
+      </div></div></div></div><div class="owl-nav disabled"><button role="presentation" class="owl-prev"><span class="ion-md-arrow-back"></span></button><button role="presentation" class="owl-next"><span class="ion-chevron-right"></span></button></div><div class="owl-dots"><button class="owl-dot active"><span></span></button><button class="owl-dot"><span></span></button></div></div>
+  </section>
+
+  <section class="ftco-section" style="margin-left: 307px; ">
+    <div class="container">
+      <div class="row no-gutters ftco-services">
+
+        <div class="col-md-3 text-center d-flex align-self-stretch ftco-animate fadeInUp ftco-animated">
+          <div class="media block-6 services mb-md-0 mb-4">
+            <div class="icon bg-color-2 d-flex justify-content-center align-items-center mb-2">
+              <span class="flaticon-diet"></span>
+            </div>
+            <div class="media-body">
+              <h3 class="heading">Always Fresh</h3>
+              <span>Product well package</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 text-center d-flex align-self-stretch ftco-animate fadeInUp ftco-animated">
+          <div class="media block-6 services mb-md-0 mb-4">
+            <div class="icon bg-color-3 d-flex justify-content-center align-items-center mb-2">
+              <span class="flaticon-award"></span>
+            </div>
+            <div class="media-body">
+              <h3 class="heading">Superior Quality</h3>
+              <span>Quality Products</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 text-center d-flex align-self-stretch ftco-animate fadeInUp ftco-animated">
+          <div class="media block-6 services mb-md-0 mb-4">
+            <div class="icon bg-color-4 d-flex justify-content-center align-items-center mb-2">
+              <span class="flaticon-customer-service"></span>
+            </div>
+            <div class="media-body">
+              <h3 class="heading">Support</h3>
+              <span>24/7 Support</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ftco-section ftco-category ftco-no-pt">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+          <div class="row">
+            <div class="col-md-6 order-md-last align-items-stretch d-flex">
+              <div class="category-wrap-2 ftco-animate img align-self-stretch d-flex fadeInUp ftco-animated" style="background-image: url(/assets/smallbuis1.png);">
+                <div class="text text-center" style="margin-top: -220px;">
+                  <h2>Businesses</h2>
+                  <p>Our Most Famous Businesses </p>
+                  <p><a href="/shopByBuisiness" class="btn btn-primary">Shop now</a></p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="category-wrap ftco-animate img mb-4 d-flex align-items-end fadeInUp ftco-animated" *ngFor="let entr of firsttwolist"
+              [style.backgroundImage]="getSanitizedUrl(entr.image)">
+                <div class="text px-3 py-1">
+                  <h2 class="mb-0"><a >{{entr.name}}</a></h2>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="category-wrap ftco-animate img mb-4 d-flex align-items-end fadeInUp ftco-animated" *ngFor="let entreprise of lasttwolist "  [style.backgroundImage]="getSanitizedUrl(entreprise.image)"  >
+            <div class="text px-3 py-1">
+              <h2 class="mb-0"><a >{{entreprise.name}}</a></h2>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="ftco-section img" style="background-image: url(/assets/donationacceuil3.jpg); height: 300px;" >
+    <div class="container">
+
+    </div>
+  </section>
+
+  <section class="ftco-section testimony-section">
+    <div class="container">
+      <div class="row justify-content-center mb-5 pb-3">
+        <div class="col-md-7 heading-section ftco-animate text-center fadeInUp ftco-animated">
+          <span class="subheading">Testimony</span>
+          <h2 class="mb-4">Our satisfied customer says</h2>
+        </div>
+      </div>
+      <div class="row ftco-animate fadeInUp ftco-animated">
+        <div class="col-md-12">
+          <div class="carousel-testimony owl-carousel owl-loaded owl-drag">
+          <div class="owl-stage-outer"><div class="owl-stage" style="transition: all 0s ease 0s; width: 4180px; transform: translate3d(-760px, 0px, 0px);"><div class="owl-item cloned" style="width: 350px; margin-right: 30px;"><div class="item">
+              <div class="testimony-wrap p-4 pb-5">
+                <div class="user-img mb-5" style="background-image: url(/assets/charity1.jpg)">
+                  <span class="quote d-flex align-items-center justify-content-center">
+                    <i class="icon-quote-left"></i>
+                  </span>
+                </div>
+                <div class="text text-center">
+                  <p class="mb-5 pl-4 line">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                  <p class="name">Garreth Smith</p>
+                  <span class="position">UI Designer</span>
+                </div>
+              </div>
+            </div></div><div class="owl-item cloned" style="width: 350px; margin-right: 30px;"><div class="item">
+
+            </div></div>
+            <div class="owl-item cloned active" style="width: 350px; margin-right: 30px;"><div class="item">
+              <div class="testimony-wrap p-4 pb-5">
+                <div class="user-img mb-5" style="background-image: url(/assets/charity2.png)">
+                  <span class="quote d-flex align-items-center justify-content-center">
+                    <i class="icon-quote-left"></i>
+                  </span>
+                </div>
+                <div class="text text-center">
+                  <p class="mb-5 pl-4 line">Thank you for offering affordable groceries to help us provide meals for those in need. Your support has made a real difference in our community!</p>
+
+                </div>
+              </div>
+
+            </div></div>
+            <div class="owl-item cloned active" style="width: 350px; margin-right: 30px;"><div class="item">
+              <div class="testimony-wrap p-4 pb-5">
+                <div class="user-img mb-5" style="background-image: url(/assets/charity3.jpeg)">
+                  <span class="quote d-flex align-items-center justify-content-center">
+                    <i class="icon-quote-left"></i>
+                  </span>
+                </div>
+                <div class="text text-center">
+                  <p class="mb-5 pl-4 line">We’re grateful for the discounted food supplies. It's allowed us to stretch our budget and feed more people who depend on us</p>
+
+                </div>
+              </div>
+
+
+
+
+
+            </div></div>
+            <div class="owl-item cloned active" style="width: 350px; margin-right: 30px;"><div class="item">
+              <div class="testimony-wrap p-4 pb-5">
+                <div class="user-img mb-5" style="background-image: url(/assets/charity1.jpg)">
+                  <span class="quote d-flex align-items-center justify-content-center">
+                    <i class="icon-quote-left"></i>
+                  </span>
+                </div>
+                <div class="text text-center">
+                  <p class="mb-5 pl-4 line">Your contributions through reduced prices have been invaluable. Thanks to you, we can continue to help families struggling with food insecurity.</p>
+
+                </div>
+              </div>
+
+
+
+
+
+            </div></div>
+          </div></div>
+
+</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr>
+
+  <!-- loader -->
+  <div id="ftco-loader" class="fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"></circle><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"></circle></svg></div>
+
+
+
+
+  </body>

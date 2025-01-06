@@ -1,0 +1,38 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 ftco-animate fadeInUp ftco-animated">
+      <div class="cart-list">
+        <table class="table">
+          <thead class="thead-primary">
+            <tr class="text-center">
+              <th>Food Item</th>
+        <th>Quantity</th>
+        <th>Price For Each item</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="text-center" *ngFor="let contact of contacts">
+
+
+
+
+              <td class="product-name">
+                <h3>{{ contact.publication.aliment }}</h3>
+
+              </td>
+
+              <td class="price">{{ contact.quantity }}</td>
+
+
+
+              <td class="total">{{ contact.prix_unitaire }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+

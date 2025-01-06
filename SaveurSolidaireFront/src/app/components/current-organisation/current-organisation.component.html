@@ -1,0 +1,109 @@
+<body class="goto-here">
+
+
+
+  <div class="hero-wrap hero-bread" style="background-image: url('/assets/donation4.jpg');">
+    <div class="container">
+      <div class="row no-gutters slider-text align-items-center justify-content-center">
+        <div class="col-md-9 ftco-animate text-center">
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="ftco-section ftco-no-pb ftco-no-pt bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-5 p-md-5 img img-2 d-flex justify-content-center align-items-center" >
+          <img [src]="imagesrc" alt="User Image"style="width: 400px;">
+
+
+        </div>
+        <div class="col-md-7 py-5 wrap-about pb-md-5">
+          <div class="heading-section-bold mb-4 mt-md-5">
+            <div class="ml-md-0">
+              <h2 class="mb-4">Welcome to {{organisation.name}} </h2>
+            </div>
+          </div>
+
+          <div class="pb-md-5">
+
+
+
+            <div class="rating d-flex">
+							<p class="text-left mr-4">
+                <span style="color: #bbb;"><i class="fa fa-google-plus" aria-hidden="true"></i> <a  class="mr-2" style="color: #000;">{{organisation.email}}</a></span>
+
+							</p>
+							<p class="text-left mr-4">
+                <span style="color: #bbb;"><i class="fa fa-map-marker" aria-hidden="true"></i> <a  class="mr-2" style="color: #000;">{{organisation.location}}</a></span>
+
+							</p>
+							<p class="text-left mr-4">
+                <span style="color: #bbb;"> <i class="fa fa-phone-square" aria-hidden="true"></i> <a  class="mr-2" style="color: #000;">{{organisation.numerotel}}</a></span>
+
+							</p>
+						</div>
+            <p><a href="#" class="btn btn-primary" data-toggle="modal" (click)="patchvalue()" data-target="#exampleModal" style="    width: 114px; margin-left: 444px;">Edit</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel"> <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit YourBuisiness</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+
+          <form action="#" [formGroup]="editForm"  class="bg-white p-5 contact-form" >
+            <div class="form-group">
+              <input type="text" class="form-control" formControlName="name"  >
+            </div>
+            <div class="form-group">
+              <input type="email" class="form-control"  formControlName="email">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control"  formControlName="location">
+            </div>
+
+
+            <div class="form-group">
+              <input type="number" class="form-control"  formControlName="numerotel">
+            </div>
+
+            </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" (click)="updatebuisiness()" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <section class="ftco-section ftco-counter img" id="section-counter" >
+
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d102239.41076407355!2d10.060704918624795!3d36.79499188126147!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12fd337f5e7ef543%3A0xd671924e714a0275!2sTunis!5e0!3m2!1sfr!2stn!4v1727344582173!5m2!1sfr!2stn"  style="border:0;width: 1688px;
+            margin-top: -75px;
+            height: 500px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+  </section>
+
+
+
+
+
+

@@ -1,0 +1,70 @@
+<body class="goto-here">
+  <div class="hero-wrap hero-bread" style="background-image: url('/assets/donation4.jpg');">
+    <div class="container">
+
+    </div>
+  </div>
+
+  <section class="ftco-section ftco-degree-bg">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 ">
+          <div class="row">
+
+            <div class="col-md-12 d-flex" *ngFor="let pub of  filteredListe ">
+              <div class="blog-entry align-self-stretch d-md-flex">
+                <a href="blog-single.html"  >
+                  <img src="http://localhost:8081/fileController/files/{{pub.image}}" style="    width: 248px;height: 218px;">
+                </a>
+
+                <div class="text d-block pl-md-4" >
+
+                  <h3 class="heading"><a href="#">{{pub.name}}</a></h3>
+                  <div class="meta mb-3">
+                    <div><i class="fa fa-google-plus" aria-hidden="true"></i><span style="color: black;">{{pub.email}}</span></div>
+                    <div><i class="fa fa-map-marker" aria-hidden="true"></i> <span style="color: black;">{{pub.location}} </span></div>
+                    <div> <i class="fa fa-phone-square" aria-hidden="true"></i> <span style="color: black;">{{pub.numerotel}} </span></div>
+                    <div> <i class="fa fa-building" aria-hidden="true"></i> <span style="color: black;">{{pub.type}} </span></div>
+
+                  </div>
+
+                  <p><span style="color: black;">{{pub.description}}</span></p>
+                  <!-- <p>Unit Price:<span style="color: black;">{{pub.prix_unitaire}}</span></p> -->
+                  <!-- Currency conversion dropdown -->
+
+
+                  <p><a  href="" (click)="viewItems(pub.id)" class="btn btn-primary py-2 px-3">View Items</a></p>
+                </div>
+
+
+              </div>
+            </div>
+          </div>
+        </div> <!-- .col-md-8 -->
+        <div class="col-lg-4 sidebar">
+          <div class="sidebar-box">
+            <form action="#" class="search-form">
+              <div class="form-group">
+                <span class="icon ion-ios-search"></span>
+                <input type="text" class="form-control"    [(ngModel)]="searchQuery" (input)="filterPublications()"   name="search" placeholder="Search...">
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="col text-center">
+        <div class="block-27">
+          <div class="pagination-controls">
+            <button (click)="previousPage()" [disabled]="currentPage === 0">&lt;</button>
+            <span>Page {{ currentPage + 1 }} of {{ totalPages }}</span>
+            <button (click)="nextPage()" [disabled]="currentPage === totalPages - 1">&gt;</button>
+          </div>
+
+      </div>
+    </div>
+      </div>
+
+      </div>
+
+  </section> <!-- .section -->
+
+

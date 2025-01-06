@@ -1,0 +1,16 @@
+.upload-container {
+  border: 2px dashed #818182;
+  padding: 20px;
+  text-align: center;
+  transition: border-color 0.3s;
+}
+
+.upload-container.drag-over {
+  border-color: #818182;
+}
+
+img {
+  margin-top: 20px;
+  max-width: 100%;
+  height: auto;
+}

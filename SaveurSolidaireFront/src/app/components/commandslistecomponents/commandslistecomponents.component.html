@@ -1,0 +1,33 @@
+<br><br><br>
+<br><br>
+
+<div class="contact-list">
+
+  <h2>Ordrs List</h2>
+
+  <div *ngIf="contacts.length === 0" class="no-contacts">
+    Aucun Commande trouvé pour cette Organisation.
+  </div>
+
+  <table *ngIf="contacts.length > 0" class="contact-table">
+    <thead>
+      <tr>
+        <th>order date</th>
+        <th>total cost</th>
+   <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let contact of contacts">
+        <td>{{ contact.date_commande| date }}</td>
+        <td>{{ contact.couttotal }}</td>
+        <td>
+ <button class="details-button"  (click)="GoTodetailspage(contact.id)">Details</button>
+        </td>
+
+      </tr>
+    </tbody>
+  </table>
+</div>
+<br><br>
+<br><br>

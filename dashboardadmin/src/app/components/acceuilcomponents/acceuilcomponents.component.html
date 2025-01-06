@@ -1,0 +1,214 @@
+<div class="page-wrapper">
+
+  <div class="content container-fluid">
+
+<!-- Page Header -->
+<div class="page-header">
+<div class="row">
+<div class="col-sm-12">
+  <h3 class="page-title">Welcome Admin!</h3>
+  <ul class="breadcrumb">
+    <li class="breadcrumb-item active">Dashboard</li>
+  </ul>
+</div>
+</div>
+</div>
+<!-- /Page Header -->
+
+<div class="row">
+<div class="col-xl-3 col-sm-6 col-12">
+<div class="card">
+  <div class="card-body">
+    <div class="dash-widget-header">
+      <span class="dash-widget-icon text-primary border-primary">
+        <i class="fe fe-users"></i>
+      </span>
+      <div class="dash-count">
+        <h3>{{allorganisation}}</h3>
+      </div>
+    </div>
+    <div class="dash-widget-info">
+      <h6 class="text-muted">Businesses</h6>
+
+    </div>
+  </div>
+</div>
+</div>
+<div class="col-xl-3 col-sm-6 col-12">
+  <div class="card">
+    <div class="card-body">
+      <div class="dash-widget-header">
+        <span class="dash-widget-icon text-primary border-primary">
+          <i class="fe fe-users"></i>
+        </span>
+        <div class="dash-count">
+          <h3>{{allorganisation}}</h3>
+        </div>
+      </div>
+      <div class="dash-widget-info">
+        <h6 class="text-muted">Organisations</h6>
+
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <div class="col-xl-3 col-sm-6 col-12">
+    <div class="card">
+      <div class="card-body">
+        <div class="dash-widget-header">
+          <span class="dash-widget-icon text-warning border-warning">
+            <i class="fe fe-folder"></i>
+          </span>
+          <div class="dash-count">
+            <h3>{{allpublication}}</h3>
+          </div>
+        </div>
+        <div class="dash-widget-info">
+
+          <h6 class="text-muted">Publications</h6>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-xl-3 col-sm-6 col-12">
+    <div class="card">
+      <div class="card-body">
+        <div class="dash-widget-header">
+          <span class="dash-widget-icon text-success">
+            <i class="fe fe-credit-card"></i>
+          </span>
+          <div class="dash-count">
+            <h3>{{allorders}}</h3>
+          </div>
+        </div>
+        <div class="dash-widget-info">
+
+          <h6 class="text-muted">Orders</h6>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+</div>
+<div class="row">
+<div class="col-md-12 col-lg-6">
+
+<!-- Sales Chart -->
+<div class="card card-chart">
+  <div class="card-header">
+    <h4 class="card-title">Number of Publication per Business</h4>
+  </div>
+  <div class="card-body">
+    <canvas id="publicationChart"></canvas>
+  </div>
+</div>
+<!-- /Sales Chart -->
+
+</div>
+<div class="col-md-12 col-lg-6">
+
+<!-- Invoice Chart -->
+<div class="card card-chart">
+  <div class="card-header">
+    <h4 class="card-title">Average Orders per Business</h4>
+  </div>
+  <div class="card-body">
+    <canvas id="orderChart"></canvas>
+  </div>
+</div>
+<!-- /Invoice Chart -->
+
+</div>
+</div>
+<div class="row">
+  <div class="col-md-6 d-flex">
+
+    <div class="card  card-table flex-fill">
+      <div class="card-header">
+        <h4 class="card-title">Buissiness List</h4>
+      </div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table table-hover table-center mb-0">
+            <thead>
+              <tr >
+                <th>Full Name</th>
+                <th>Email</th>
+                <th>Phone Number</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let entreprise of buisinessllist">
+                <td>
+                  <h2 class="table-avatar">
+                    <a href="profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="http://localhost:8081/fileController/files/{{entreprise.image}}" alt="User Image"></a>
+                    <a href="profile.html">{{entreprise.name}} </a>
+                  </h2>
+                </td>
+                <td>{{entreprise.email}}</td>
+                <td>{{entreprise.numerotel}}</td>
+
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    </div>
+<div class="col-md-6 d-flex">
+
+<!-- Recent Orders -->
+<div class="card card-table flex-fill">
+  <div class="card-header">
+    <h4 class="card-title">Organisation List</h4>
+  </div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table table-hover table-center mb-0">
+        <thead>
+          <tr>
+            <th>Full Name</th>
+            <th>Email</th>
+            <th>Phone Number</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let organisation of organisationList">
+            <td>
+              <h2 class="table-avatar">
+                <a href="profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="http://localhost:8081/fileController/files/{{organisation.image}}" alt="User Image"></a>
+                <a href="profile.html">{{organisation.name}}</a>
+              </h2>
+            </td>
+            <td>{{organisation.email}}</td>
+            <td>{{organisation.numerotel}}</td>
+
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<!-- /Recent Orders -->
+
+</div>
+
+</div>
+<div class="row">
+<div class="col-md-12">
+
+
+</div>
+</div>
+
+</div>
+</div>
+

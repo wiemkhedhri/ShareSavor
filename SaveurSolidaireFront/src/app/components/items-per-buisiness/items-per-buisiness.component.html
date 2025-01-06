@@ -1,0 +1,72 @@
+<body class="goto-here">
+
+  <div class="hero-wrap hero-bread" style="background-image: url('/assets/donation4.jpg');">
+    <div class="container">
+      <div class="row no-gutters slider-text align-items-center justify-content-center">
+        <div class="col-md-9 ftco-animate text-center">
+          <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home</a></span> <span>Products</span></p>
+          <h1 class="mb-0 bread">Products</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="ftco-section">
+    <div class="currency-selector" style=" margin-left: 385px;">
+      <form action="#" class="search-form">
+        <div class="form-group" style="width: 400px;">
+          <span class="icon ion-ios-search"></span>
+          <input type="text" class="form-control"    [(ngModel)]="searchQuery" (input)="filterPublications()"   name="search" placeholder="Search...">
+        </div>
+      </form>
+      <label for="currency" style="    margin-top: -26px;">Select Currency:</label>
+      <select id="currency" style="    margin-top: -33px;" [(ngModel)]="selectedCurrency" (change)="onCurrencyChange(selectedCurrency)">
+        <option *ngFor="let currency of currencyOptions" [value]="currency">{{ currency }}</option>
+      </select>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-lg-3" *ngFor="let pub of filteredListe">
+          <div class="product">
+            <a href="#" class="img-prod"><img class="img-fluid" src="http://localhost:8081/fileController/files/{{pub.image}}" style="
+              height: 253px;" alt="Colorlib Template">
+              <div class="overlay"></div>
+            </a>
+            <div class="text py-3 pb-4 px-3 text-center">
+              <h3><a href="#">{{pub.aliment}}</a></h3>
+              <div class="d-flex">
+                <div class="pricing">
+                  <p class="price"><span class="price-sale">{{ convertPrice(pub.prix_unitaire) | number:'1.2-2' }} {{ selectedCurrency }}</span></p>
+
+                </div>
+              </div>
+              <div class="bottom-area d-flex px-3">
+                <div class="m-auto d-flex">
+                  <a href=""  (click)="NavigatetoSingleProduct(pub.id)" class="add-to-cart d-flex justify-content-center align-items-center text-center">
+                    <span><i class="ion-ios-menu"></i></span>
+                  </a>
+                  <!-- <a href="#" class="buy-now d-flex justify-content-center align-items-center mx-1">
+                    <span><i class="ion-ios-cart"></i></span>
+                  </a>
+                  <a href="#" class="heart d-flex justify-content-center align-items-center ">
+                    <span><i class="ion-ios-heart"></i></span>
+                  </a> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col text-center">
+      <div class="block-27">
+        <div class="pagination-controls">
+          <button (click)="previousPage()" [disabled]="currentPage === 0">&lt;</button>
+          <span>Page {{ currentPage + 1 }} of {{ totalPages }}</span>
+          <button (click)="nextPage()" [disabled]="currentPage === totalPages - 1">&gt;</button>
+        </div>
+
+    </div>
+  </div>
+  </section>
+

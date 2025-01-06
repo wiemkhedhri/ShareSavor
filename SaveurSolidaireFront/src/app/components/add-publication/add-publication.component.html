@@ -1,0 +1,86 @@
+<body class="goto-here">
+
+
+  <div class="hero-wrap hero-bread" style="background-image: url('/assets/donation4.jpg');">
+    <div class="container">
+      <div class="row no-gutters slider-text align-items-center justify-content-center">
+        <div class="col-md-9 ftco-animate text-center">
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="ftco-section contact-section bg-light">
+    <div class="container">
+
+      <div class="row block-9" style="margin-left: 171px;">
+        <div  style="width: 809px;">
+          <form action="#" [formGroup]="AddForm" class="bg-white p-5 contact-form">
+            <h2 _ngcontent-voj-c6="" class="mb-4" style="margin-left: 221px;"> <i class="fa fa-plus-circle" aria-hidden="true"></i> Add New Post </h2>
+            <div class="form-group">
+              <input type="text" class="form-control" formControlName="aliment" placeholder="FoodItem">
+            </div>
+            <div *ngIf="AddForm.get('aliment')?.invalid && AddForm.get('aliment')?.touched"  class="error-message" style="color: cadetblue;">
+              <span *ngIf="AddForm.get('aliment')?.errors?.['required']">Food Item is required.</span>
+            </div>
+            <div class="form-group">
+              <span>Publication Date</span>
+              <input type="date" class="form-control" formControlName="datepublication" placeholder="Publication Date">
+            </div>
+            <div *ngIf="AddForm.get('datepublication')?.invalid && AddForm.get('datepublication')?.touched"  class="error-message" style="color: cadetblue;">
+              <span *ngIf="AddForm.get('datepublication')?.errors?.['required']"> Publication Date is required</span>
+            </div>
+
+            <div class="form-group">
+              <span>Expiration Date</span>
+              <input type="date" class="form-control" formControlName="date_expiration" placeholder="Expiration Date">
+            </div>
+            <div *ngIf="AddForm.get('date_expiration')?.invalid && AddForm.get('date_expiration')?.touched"  class="error-message" style="color: cadetblue;">
+              <span *ngIf="AddForm.get('date_expiration')?.errors?.['required']">Expiration Date is required.</span>
+            </div>
+            <div class="form-group">
+              <input type="number" class="form-control" formControlName="quantitedisponible" placeholder="Quantity Available">
+            </div>
+            <div *ngIf="AddForm.get('quantitedisponible')?.invalid && AddForm.get('quantitedisponible')?.touched"  class="error-message" style="color: cadetblue;">
+              <span *ngIf="AddForm.get('quantitedisponible')?.errors?.['required']">
+                Quantity Available is required.</span>
+            </div>
+            <div class="form-group">
+              <input type="number" class="form-control" formControlName="prix_unitaire" placeholder="Unit price">
+            </div>
+            <div *ngIf="AddForm.get('prix_unitaire')?.invalid && AddForm.get('prix_unitaire')?.touched"  class="error-message" style="color: cadetblue;">
+              <span *ngIf="AddForm.get('prix_unitaire')?.errors?.['required']">Unit price is required.</span>
+            </div>
+
+
+
+<div
+class="upload-container"
+(dragover)="onDragOver($event)"
+(dragleave)="onDragLeave($event)"
+(drop)="onDrop($event)"
+[ngClass]="{'drag-over': isDragOver}"
+>
+<input type="file" formControlName="file" (change)="onFileSelected($event)" accept="image/*" />
+<p>Drag and drop an image here or click to select one.</p>
+</div>
+<div *ngIf="AddForm.get('file')?.invalid && AddForm.get('file')?.touched"  class="error-message" style="color: cadetblue;">
+  <span *ngIf="AddForm.get('file')?.errors?.['required']">Image is required.</span>
+</div>
+<img *ngIf="imageUrl" [src]="imageUrl" alt="Uploaded Image" />
+
+           <br>
+           <br>
+            <div class="form-group">
+              <input type="submit" (click)="savePublciation()"  style="margin-left: 589px;" value="Save" class="btn btn-primary py-3 px-5">
+            </div>
+          </form>
+
+        </div>
+
+
+      </div>
+    </div>
+  </section>
+

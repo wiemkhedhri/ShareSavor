@@ -1,0 +1,80 @@
+<body class="goto-here">
+
+
+  <div class="hero-wrap hero-bread" style="background-image: url('/assets/donation4.jpg');">
+    <div class="container">
+      <div class="row no-gutters slider-text align-items-center justify-content-center">
+        <div class="col-md-9 ftco-animate text-center">
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="ftco-section contact-section bg-light">
+    <div class="container">
+
+      <div class="row block-9" style="margin-left: 171px;">
+        <div  style="width: 809px;">
+          <form action="#" [formGroup]="AddForm" class="bg-white p-5 contact-form">
+            <h2 _ngcontent-voj-c6="" class="mb-4" style="margin-left: 221px;"> <i class="fa fa-plus-circle" aria-hidden="true"></i> Add Organisation </h2>
+
+            <div class="form-group">
+              <input type="text" class="form-control" formControlName="name" placeholder="Name">
+            </div>
+            <div *ngIf="AddForm.get('name')?.invalid && AddForm.get('name')?.touched"  class="error-message" style="color: cadetblue;">
+              <span *ngIf="AddForm.get('name')?.errors?.['required']">Name is required.</span>
+
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" formControlName="email" placeholder="Email">
+            </div>
+            <div *ngIf="AddForm.get('email')?.invalid && AddForm.get('email')?.touched"  class="error-message" style="color: cadetblue;">
+              <span *ngIf="AddForm.get('email')?.errors?.['required']">Email is required.</span>
+              <span *ngIf="AddForm.get('email')?.errors?.['email']">Enter a valid email.</span>
+            </div>
+            <div class="form-group">
+              <input type="number" class="form-control" formControlName="numerotel" placeholder="Phone Number">
+            </div>
+            <div *ngIf="AddForm.get('numerotel')?.invalid && AddForm.get('numerotel')?.touched"  class="error-message" style="color: cadetblue;">
+              <span *ngIf="AddForm.get('numerotel')?.errors?.['required']">Phone number is required.</span>
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" formControlName="location" placeholder="Location">
+            </div>
+            <div *ngIf="AddForm.get('location')?.invalid && AddForm.get('location')?.touched"  class="error-message" style="color: cadetblue;">
+              <span *ngIf="AddForm.get('location')?.errors?.['required']">Location is required.</span>
+            </div>
+
+
+
+
+<div
+class="upload-container"
+(dragover)="onDragOver($event)"
+(dragleave)="onDragLeave($event)"
+(drop)="onDrop($event)"
+[ngClass]="{'drag-over': isDragOver}"
+>
+<input type="file" formControlName="file" (change)="onFileSelected($event)" accept="image/*" />
+<p>Drag and drop an image here or click to select one.</p>
+</div>
+<div *ngIf="AddForm.get('file')?.invalid && AddForm.get('file')?.touched"  class="error-message" style="color: cadetblue;">
+  <span *ngIf="AddForm.get('file')?.errors?.['required']">Image is required.</span>
+</div>
+<img *ngIf="imageUrl" [src]="imageUrl" alt="Uploaded Image" />
+
+           <br>
+           <br>
+            <div class="form-group">
+              <input type="submit" (click)="SaveOrganisation()"  style="margin-left: 589px;" value="Save" class="btn btn-primary py-3 px-5">
+            </div>
+          </form>
+
+        </div>
+
+
+      </div>
+    </div>
+  </section>
+

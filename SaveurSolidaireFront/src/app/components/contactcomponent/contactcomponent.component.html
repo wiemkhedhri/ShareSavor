@@ -1,0 +1,70 @@
+<body class="goto-here">
+  <div class="hero-wrap hero-bread" style="background-image: url('/assets/donate1.jpg');">
+    <div class="container">
+      <div class="row no-gutters slider-text align-items-center justify-content-center">
+        <div class="col-md-9 ftco-animate text-center">
+          <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home</a></span> <span>Contact us</span></p>
+          <h1 class="mb-0 bread">Contact us</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="ftco-section contact-section bg-light">
+    <div class="container">
+      <div class="row d-flex mb-5 contact-info">
+        <!-- Contact Info Rows... -->
+      </div>
+      <div class="row block-9">
+        <div class="col-md-6 order-md-last d-flex">
+          <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="bg-white p-5 contact-form">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Your Email" formControlName="senderEmail" required>
+              <div *ngIf="contactForm.get('senderEmail')?.touched && contactForm.get('senderEmail')?.invalid" class="text-danger">
+                <small *ngIf="contactForm.get('senderEmail')?.errors?.['required']">Email is required.</small>
+                <small *ngIf="contactForm.get('senderEmail')?.errors?.['email']">Enter a valid email address.</small>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="businessSelect">Select Business</label>
+              <select id="businessSelect" class="form-control" formControlName="selectedBusiness" required>
+                <option *ngFor="let business of businesses" [value]="business.id">{{ business.name }}</option>
+              </select>
+              <div *ngIf="contactForm.get('selectedBusiness')?.touched && contactForm.get('selectedBusiness')?.invalid" class="text-danger">
+                <small>Business selection is required.</small>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Subject" formControlName="subject" required>
+              <div *ngIf="contactForm.get('subject')?.touched && contactForm.get('subject')?.invalid" class="text-danger">
+                <small *ngIf="contactForm.get('subject')?.errors?.['required']">Subject is required.</small>
+                <small *ngIf="contactForm.get('subject')?.errors?.['minlength']">Subject must be at least 5 characters.</small>
+                <small *ngIf="contactForm.get('subject')?.errors?.['maxlength']">Subject cannot exceed 50 characters.</small>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <textarea cols="30" rows="7" class="form-control" placeholder="Message" formControlName="message" required></textarea>
+              <div *ngIf="contactForm.get('message')?.touched && contactForm.get('message')?.invalid" class="text-danger">
+                <small *ngIf="contactForm.get('message')?.errors?.['required']">Message is required.</small>
+                <small *ngIf="contactForm.get('message')?.errors?.['minlength']">Message must be at least 10 characters.</small>
+                <small *ngIf="contactForm.get('message')?.errors?.['maxlength']">Message cannot exceed 500 characters.</small>
+              </div>
+            </div>
+
+
+            <div class="form-group">
+              <input type="submit" value="Send Message" class="btn btn-primary py-3 px-5" [disabled]="contactForm.invalid">
+            </div>
+          </form>
+        </div>
+
+        <div class="col-md-6 d-flex">
+          <img src="/assets/donatecontact2.jpg" alt="Contact Image" class="img-fluid bg-white">
+        </div>
+      </div>
+    </div>
+  </section>
+</body>

@@ -1,0 +1,123 @@
+
+<div class="hero-wrap hero-bread" style="background-image: url('/assets/donate1.jpg');">
+  <div class="container">
+    <div class="row no-gutters slider-text align-items-center justify-content-center">
+      <div class="col-md-9 ftco-animate text-center">
+        <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home</a></span> <span>Contact us</span></p>
+        <h1 class="mb-0 bread">Contact us</h1>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="ftco-section contact-section bg-light">
+  <div class="container">
+
+    <div class="row block-9">
+      <div class="col-md-6 order-md-last d-flex">
+
+        <form [formGroup]="LogInForm" action="#" class="bg-white p-5 contact-form">
+          <br><br>
+          <i class="fa fa-sign-out" aria-hidden="true" style="    margin-left: 216px;
+          font-size: xx-large;"></i>
+          <h2 class="mb-4" style="    margin-left: 159px;">Welcome</h2>
+
+          <h3 style="    margin-left: 132px;
+          margin-top: -29px;
+          font-size: larger;
+          font-family: monospace;">Sign In to your Account</h3>
+          <br>
+          <div class="form-group">
+            <input type="text" class="form-control" formControlName="email" placeholder="Email">
+          </div>
+          <div *ngIf="LogInForm.get('email')?.invalid && LogInForm.get('email')?.touched"  class="error-message" style="color: cadetblue;">
+            <span *ngIf="LogInForm.get('email')?.errors?.['required']">Email is required.</span>
+            <span *ngIf="LogInForm.get('email')?.errors?.['email']">Enter a valid email.</span>
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-control" formControlName="password" placeholder="Password">
+          </div>
+          <div *ngIf="LogInForm.get('password')?.invalid && LogInForm.get('password')?.touched"  class="error-message" style="color: cadetblue;">
+            <span *ngIf="LogInForm.get('password')?.errors?.['required']">Password is required.</span>
+
+          </div>
+          <br>
+          <div class="form-group">
+            <input type="submit" style="margin-left: 258px;"  (click)="logIn()" value="Log In" class="btn btn-primary py-3 px-5">
+          </div>
+        </form>
+
+      </div>
+
+      <div class="col-md-6 d-flex">
+
+        <form action="#" [formGroup]="signInForm" class="bg-white p-5 contact-form">
+
+          <i class="fa fa-user-circle-o" aria-hidden="true"  style="    margin-left: 206px;font-size: xx-large;"></i>
+          <h2 class="mb-4" style="    margin-left: 108px;">Create Account</h2>
+          <h3 style="    margin-left: 73px;
+          margin-top: -29px;
+          font-size: larger;
+          font-family: monospace;">Join Us Today! Giving is Living!</h3>
+          <br>
+          <div class="form-group">
+            <input type="text" class="form-control" formControlName="fullName" placeholder="Your Full Name">
+            <div *ngIf="signInForm.get('fullName')?.invalid && signInForm.get('fullName')?.touched" class="error-message" style="color: cadetblue;">
+              <span *ngIf="signInForm.get('fullName')?.errors?.['required']">Full Name is required.</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <input type="email" class="form-control" formControlName="email" placeholder="Your Email">
+            <div *ngIf="signInForm.get('email')?.invalid && signInForm.get('email')?.touched"  class="error-message" style="color: cadetblue;">
+              <span *ngIf="signInForm.get('email')?.errors?.['required']">Email is required.</span>
+              <span *ngIf="signInForm.get('email')?.errors?.['email']">Enter a valid email.</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <input type="number" class="form-control" formControlName="numerotelephone" placeholder="Your Phone Number">
+            <div *ngIf="signInForm.get('numerotelephone')?.invalid && signInForm.get('numerotelephone')?.touched"  class="error-message" style="color: cadetblue;">
+              <span *ngIf="signInForm.get('numerotelephone')?.errors?.['required']">Phone number is required.</span>
+            </div>
+          </div>
+          <div class="form-group1">
+            <fieldset style="width: 449px;">
+              <legend>Choose Who You Represent:</legend>
+              <div class="radio-container">
+                <div class="radio-item">
+                  <input type="radio" id="BUISINESSREPRENSETIVE"  value="BUISINESSREPRENSETIVE" formControlName="role" />
+                  <label for="BUISINESSREPRENSETIVE">Business</label>
+                </div>
+                <div class="radio-item">
+                  <input type="radio" id="ORGANISATIONREPRESENTATIVE"  formControlName="role" value="ORGANISATIONREPRESENTATIVE" />
+                  <label for="ORGANISATIONREPRESENTATIVE">Organization</label>
+                </div>
+              </div>
+              <div *ngIf="signInForm.get('role')?.invalid && signInForm.get('role')?.touched"  class="error-message" style="color: cadetblue;">
+                <span *ngIf="signInForm.get('role')?.errors?.['required']">Role is required.</span>
+              </div>
+            </fieldset>
+          </div>
+
+<br>
+
+          <div class="form-group">
+            <input type="file" class="form-control" (change)="handleFileInput($event)" placeholder="Image" formControlName="file">
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-control" formControlName="password" placeholder="Password">
+            <div *ngIf="signInForm.get('password')?.invalid && signInForm.get('password')?.touched"  class="error-message" style="color: cadetblue;">
+              <span *ngIf="signInForm.get('password')?.errors?.['required']">Password is required.</span>
+              <span *ngIf="signInForm.get('password')?.errors?.['minlength']">Password must be at least 6 characters.</span>
+            </div>
+          </div>
+          <!-- <div class="form-group">
+            <textarea name="" id="" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
+          </div> -->
+          <div class="form-group">
+            <input type="submit"  style="margin-left: 258px;" (click)="Register()" value="Sign In" class="btn btn-primary py-3 px-5">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

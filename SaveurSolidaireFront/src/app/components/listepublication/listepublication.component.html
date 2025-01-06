@@ -1,0 +1,64 @@
+<body class="goto-here">
+  <div class="hero-wrap hero-bread" style="background-image: url('/assets/donation4.jpg');">
+    <div class="container"></div>
+  </div>
+
+  <section class="ftco-section ftco-degree-bg">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8">
+          <div class="row">
+            <div class="currency-selector">
+              <label for="currency">Select Currency:</label>
+              <!-- Currency selector code here -->
+            </div>
+            <div class="col-md-12 d-flex" *ngFor="let pub of filteredListe">
+              <div class="blog-entry align-self-stretch d-md-flex">
+                <a href="blog-single.html">
+                  <img src="http://localhost:8081/fileController/files/{{pub.image}}" style="width: 248px; height: 218px;">
+                </a>
+
+                <div class="text d-block pl-md-4">
+                  <h3 class="heading"><a href="#">{{ pub.aliment }}</a></h3>
+                  <div class="meta mb-3">
+                    <div><i class="fa fa-calendar" aria-hidden="true"></i> Publication Date: <span style="color: black;">{{ pub.datepublication | date }}</span></div>
+                    <div><i class="fa fa-calendar" aria-hidden="true"></i> Expiration Date: <span style="color: black;">{{ pub.date_expiration | date }}</span></div>
+                  </div>
+
+                  <p>Quantity Available: <span style="color: black;">{{ pub.quantitedisponible }}</span></p>
+                  <p>Unit Price: <span style="color: black;">{{ convertPrice(pub.prix_unitaire) | number: '1.2-2' }} {{ selectedCurrency }}</span></p>
+
+                  <!-- Delete icon -->
+                  <div class="delete-icon" style="text-align: right;">
+                    <i class="fa fa-trash" style="cursor: pointer;   color: red;  font-size: x-large;  margin-left: 900px;  margin-top: -101px;" (click)="deletePublication(pub.id)"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 sidebar">
+          <div class="sidebar-box">
+            <form action="#" class="search-form">
+              <div class="form-group">
+                <span class="icon ion-ios-search"></span>
+                <input type="text" class="form-control" [(ngModel)]="searchQuery" (input)="filterPublications()" name="search" placeholder="Search...">
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="col text-center">
+          <div class="block-27">
+            <div class="pagination-controls">
+              <button (click)="previousPage()" [disabled]="currentPage === 0">&lt;</button>
+              <span>Page {{ currentPage + 1 }} of {{ totalPages }}</span>
+              <button (click)="nextPage()" [disabled]="currentPage === totalPages - 1">&gt;</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>

@@ -1,0 +1,60 @@
+<body class="goto-here">
+  <div class="hero-wrap hero-bread" style="background-image: url('/assets/donation4.jpg');">
+    <div class="container">
+      <div class="row no-gutters slider-text align-items-center justify-content-center"></div>
+    </div>
+  </div>
+
+  <section class="ftco-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 mb-5">
+          <a class="image-popup">
+            <img src="http://localhost:8081/fileController/files/{{singleproduct.image}}" class="img-fluid" alt="Product Image">
+          </a>
+        </div>
+
+        <div class="col-lg-6 product-details pl-md-5">
+          <h3>{{singleproduct?.aliment}}</h3>
+          <p class="price">
+            <span>{{ convertPrice(singleproduct.prix_unitaire) | number:'1.2-2' }} {{ selectedCurrency }}</span>
+          </p>
+          <p>Publication Date : <span>{{singleproduct.datepublication | date}}</span></p>
+
+          <div class="row mt-4">
+            <div class="w-100"></div>
+            <div class="input-group col-md-6 d-flex mb-3" *ngIf="!isOutOfStock()">
+              <form [formGroup]="form">
+                <div class="input-group mb-3">
+                  <button type="button" class="btn btn-outline-secondary" (click)="decreaseQuantity()" [disabled]="quantity === 1">
+                    <i class="ion-ios-remove"></i>
+                  </button>
+                  <input type="number" id="quantity" formControlName="quantity" class="form-control" [(ngModel)]="quantity" [min]="1" [max]="singleproduct.quantitedisponible" readonly>
+                  <button type="button" class="btn btn-outline-secondary" (click)="increaseQuantity()" [disabled]="quantity >= singleproduct.quantitedisponible">
+                    <i class="ion-ios-add"></i>
+                  </button>
+                </div>
+              </form>
+            </div>
+
+            <div class="w-100"></div>
+            <div class="col-md-12">
+              <p style="color: #000;" *ngIf="!isOutOfStock()">{{singleproduct.quantitedisponible}} available</p>
+              <p style="color: red;" *ngIf="isOutOfStock()">Cet article est en rupture de stock</p>
+            </div>
+          </div>
+
+          <p>
+            <button *ngIf="CurrentUserState === '1'" (click)="AddToCart()"
+                    class="btn custom-btn"
+                    [disabled]="isOutOfStock()">Add to Cart</button>
+
+            <button *ngIf="CurrentUserState !== '1'" (click)="gotologin()"
+                    class="btn custom-btn">Login to Buy</button>
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </section>
+</body>

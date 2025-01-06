@@ -1,0 +1,41 @@
+<div class="main-wrapper login-body">
+  <div class="login-wrapper">
+    <div class="container">
+      <div class="loginbox">
+        <div class="login-left">
+          <img class="img-fluid" src="assets/logobig2.png" style="width: 300px;" alt="Logo">
+        </div>
+        <div class="login-right">
+          <div class="login-right-wrap">
+            <h1>Login</h1>
+            <p class="account-subtitle">Access to our dashboard</p>
+
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+              <div class="form-group">
+                <input class="form-control" type="text" formControlName="email" placeholder="Email">
+                <div *ngIf="email?.invalid && (email?.dirty || email?.touched)" class="text-danger">
+                  <small *ngIf="email?.errors?.['required']">Email is required.</small>
+                  <small *ngIf="email?.errors?.['email']">Please enter a valid email address.</small>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <input class="form-control" type="password" formControlName="password" placeholder="Password">
+                <div *ngIf="password?.invalid && (password?.dirty || password?.touched)" class="text-danger">
+                  <small *ngIf="password?.errors?.['required']">Password is required.</small>
+                  <small *ngIf="password?.errors?.['minlength']">Password must be at least 6 characters long.</small>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <button class="btn btn-primary btn-block" type="submit"  [disabled]="loginForm.invalid">Login</button>
+               
+              </div>
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

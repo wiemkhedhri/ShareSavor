@@ -1,0 +1,5 @@
+<app-navbar *ngIf="CurrentUserState==null"></app-navbar>
+<app-headerbuisinesrep  *ngIf="CurrentUserState=='1'&& role=='BUISINESSREPRENSETIVE'"></app-headerbuisinesrep>
+<app-headerorganisationrepre *ngIf="CurrentUserState=='1'&& role=='ORGANISATIONREPRESENTATIVE'" ></app-headerorganisationrepre>
+<router-outlet></router-outlet>
+<app-footer></app-footer>

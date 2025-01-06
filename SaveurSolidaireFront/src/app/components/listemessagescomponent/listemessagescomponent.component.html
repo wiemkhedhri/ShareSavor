@@ -1,0 +1,32 @@
+<br><br><br>
+<br><br>
+
+<div class="contact-list">
+
+  <h2>Contact Messages</h2>
+
+  <div *ngIf="contacts.length === 0" class="no-contacts">
+    Aucun contact trouvé pour cette entreprise.
+  </div>
+
+  <table *ngIf="contacts.length > 0" class="contact-table">
+    <thead>
+      <tr>
+        <th>Sujet</th>
+        <th>Email de l'expéditeur</th>
+        <th>Message</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let contact of contacts">
+        <td>{{ contact.subject }}</td>
+        <td>{{ contact.senderEmail }}</td>
+        <td>{{ contact.message }}</td>
+        <td>{{ contact.date | date}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<br><br>
+<br><br>
